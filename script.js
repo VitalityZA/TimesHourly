@@ -9,7 +9,7 @@ function calculateHours() {
     }
 
     const hours = total / rate;
-    resultDiv.textContent = `${hours.toFixed(2)} hours`;
+    resultDiv.textContent = `${hours.toFixed(4)} hours`; // Changed from .toFixed(2) to .toFixed(4)
 }
 
 // Add enter key functionality
