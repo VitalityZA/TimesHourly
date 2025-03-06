@@ -9,7 +9,7 @@ function calculateHours() {
     }
 
     const hours = total / rate;
-    resultDiv.textContent = `Hours worked: ${hours.toFixed(2)}`;
+    resultDiv.textContent = `${hours.toFixed(2)} hours`;
 }
 
 // Add enter key functionality
