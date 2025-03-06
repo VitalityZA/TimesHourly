@@ -1,0 +1,3 @@
+function calculateHours() {
+    const total = parseFloat(document.getElementById('total').value);
+    const rate = pars
