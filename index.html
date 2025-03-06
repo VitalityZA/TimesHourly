@@ -18,7 +18,10 @@
             <input type="number" id="rate" value="60" step="0.01" required>
         </div>
         <button onclick="calculateHours()">Calculate</button>
-        <div class="result" id="result"></div>
+        <div class="result" id="result">
+            <span id="result-text"></span>
+            <button id="copy-btn" onclick="copyResult()">Copy</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
