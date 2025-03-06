@@ -1,15 +1,27 @@
 function calculateHours() {
     const total = parseFloat(document.getElementById('total').value);
     const rate = parseFloat(document.getElementById('rate').value);
-    const resultDiv = document.getElementById('result');
+    const resultText = document.getElementById('result-text');
 
     if (isNaN(total) || isNaN(rate) || rate === 0) {
-        resultDiv.textContent = 'Please enter valid numbers';
+        resultText.textContent = 'Please enter valid numbers';
         return;
     }
 
     const hours = total / rate;
-    resultDiv.textContent = `${hours.toFixed(4)} hours`; // Changed from .toFixed(2) to .toFixed(4)
+    resultText.textContent = `${hours.toFixed(4)} hours`;
+}
+
+function copyResult() {
+    const resultText = document.getElementById('result-text').textContent;
+    navigator.clipboard.writeText(resultText)
+        .then(() => {
+            alert('Result copied to clipboard!');
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy result.');
+        });
 }
 
 // Add enter key functionality
