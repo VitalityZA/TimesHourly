@@ -97,3 +97,8 @@ button:active {
 #copy-btn:hover {
     background-color: #26A69A;
 }
+
+#copy-btn.copied {
+    background-color: #00796B; /* Darker teal for "Copied" state */
+    color: #FFFFFF;
+}
