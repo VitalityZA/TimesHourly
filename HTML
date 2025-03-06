@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Hours Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #008080;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #008080;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #006666;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #008080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #006666;
+        }
+
+        #result {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #008080;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Work Hours Calculator</h1>
+        <div class="input-group">
+            <label for="total">Total Amount ($):</label>
+            <input type="number" id="total" step="0.01" required>
+        </div>
+        <div class="input-group">
+            <label for="rate">Hourly Rate ($):</label>
+            <input type="number" id="rate" value="60" step="0.01" required>
+        </div>
+        <button onclick="calculateHours()">Calculate Hours</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateHours() {
+            const total = parseFloat(document.getElementById('total').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(total) || isNaN(rate) || rate === 0) {
+                resultDiv.textContent = 'Please enter valid numbers';
+                return;
+            }
+
+            const hours = total / rate;
+            resultDiv.textContent = `Hours worked: ${hours.toFixed(2)}`;
+        }
+
+        // Add enter key functionality
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateHours();
+            }
+        });
+    </script>
+</body>
+</html>
