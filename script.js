@@ -18,13 +18,19 @@ function calculateHours() {
 function copyResult() {
     const resultText = document.getElementById('result-text').textContent;
     const numberOnly = resultText.replace(' hours', ''); // Remove "hours" for copying
+    const copyBtn = document.getElementById('copy-btn');
+
     navigator.clipboard.writeText(numberOnly)
         .then(() => {
-            alert('Number copied to clipboard!');
+            copyBtn.textContent = 'Copied';
+            copyBtn.classList.add('copied'); // Add copied style
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.remove('copied'); // Revert style
+            }, 2000); // Revert after 2 seconds
         })
         .catch(err => {
             console.error('Failed to copy: ', err);
-            alert('Failed to copy number.');
         });
 }
 
