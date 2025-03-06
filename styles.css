@@ -82,18 +82,18 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Space between result text and button */
+    gap: 10px;
 }
 
 #copy-btn {
-    width: auto; /* Override full width for copy button */
-    padding: 6px 12px; /* Smaller padding */
-    margin: 0; /* Remove margin to align with result */
-    font-size: 0.9em; /* Slightly smaller text */
-    text-transform: none; /* Normal case for "Copy" */
-    background-color: #4DB6AC; /* Lighter teal for distinction */
+    width: auto;
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 0.9em;
+    text-transform: none;
+    background-color: #4DB6AC;
 }
 
 #copy-btn:hover {
-    background-color: #26A69A; /* Match main button hover color */
+    background-color: #26A69A;
 }
